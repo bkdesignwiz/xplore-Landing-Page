@@ -1,7 +1,7 @@
 /* Reset default margin and padding */
 * {
-  margin: 0; 
-  padding: 25 40px;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
@@ -9,14 +9,11 @@
 .container {
   max-width: 100%;
   min-height: 100vh;
+  padding: 25px 40px;
   background-image: linear-gradient(rgba(9, 0, 77, 0.65), rgba(9, 0, 77, 0.65)),
     url(images/background.png);
   background-size: cover;
   background-position: center;
-}
-
-.nav {
-  background-color: transparent;
 }
 
 .logo {
@@ -29,25 +26,23 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: transparent; /* Apply background color directly to nav */
   padding: 10px 0;
   cursor: pointer;
 }
 
 nav ul {
   list-style: none;
-  width: 100%;
-  text-align: right;
-  padding-right: 60px;
+  display: flex;
+  align-items: center;
 }
 
 nav ul li {
-  display: inline-block;
-  margin: 10px 20px;
-  padding-right: 1%;
+  margin-left: 20px;
 }
 
-nav ul li:last-child {
-  margin-right: 0;
+nav ul li:first-child {
+  margin-left: 0;
 }
 
 nav ul li a {
@@ -78,10 +73,42 @@ nav ul li a:hover {
   margin-right: 10px;
 }
 
+.content{
+    margin-top: 14%;
+    color: #fff;
+    max-width: 620px;
+}
+
+.content h1{
+    font-size: 70px;
+    font-weight: 600;
+    line-height: 85px;
+    margin-bottom: 5px;
+}
+
+.content form{
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 30px
+}
+
+.content form input {
+    border: 0;
+    outline: 0;
+    width: 100%;
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+
+
 /* Media query for responsive navigation */
 @media screen and (max-width: 768px) {
-  .container {
-    flex-direction: column;
+  nav {
+    flex-direction: column; /* Apply flex-direction to nav for responsive layout */
     text-align: center;
   }
 
@@ -94,7 +121,13 @@ nav ul li a:hover {
   }
 
   nav ul li {
-    margin-right: 0;
+    margin-left: 0;
     margin-bottom: 10px;
   }
+}
+
+.content form .btn-primary {
+    font-size: 15px;
+    padding: 10px 30px;
+
 }
